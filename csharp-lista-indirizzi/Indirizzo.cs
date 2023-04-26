@@ -77,7 +77,7 @@ namespace csharp_lista_indirizzi
 
         public override string ToString()
         {
-            string addressInfo = "-----------------------------";
+            string addressInfo = "-----------------------------" + "\n";
             addressInfo += "\tNome: " + this.name + "\n";
             addressInfo += "\tCognome: " + this.surname + "\n";
             addressInfo += "\tStrada: " + this.street + "\n";
