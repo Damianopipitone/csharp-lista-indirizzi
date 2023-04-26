@@ -20,32 +20,33 @@ namespace csharp_lista_indirizzi
 
         public Indirizzo(string name, string surname, string street, string city, string province, int ZIP)
         {
+            /*if(name == "" || surname == "" || street == "" || city == "" || province == "")
+            {
+                throw new ArgumentException("Mancano dei parametri");
+            } */
+            if (name == "")
+            {
+                throw new ArgumentException("Devi inserire il nome");
+            } if (surname == "")
+            {
+                throw new ArgumentException("Devi inserire il cognome");
+            } if(street == "")
+            {
+                throw new ArgumentException("Devi inserire la strada");
+            } if (city == "")
+            {
+                throw new ArgumentException("Devi inserire la città");             
+            } if (province == "")
+            {
+                throw new ArgumentException("Devi inserire la provincia");
+            }
+            
             this.name = name;
             this.surname = surname;
             this.street = street;
             this.city = city;
             this.province = province;
             this.ZIP = ZIP;
-
-            if(name == "" || surname == "" || street == "" || city == "" || province == "")
-            {
-                Console.WriteLine("Mancano alcuni parametri");
-            } if (name == "")
-            {
-                Console.WriteLine("Devi inserire il nome");
-            } if (surname == "")
-            {
-                Console.WriteLine("Devi inserire il cognome");
-            } if(street == "")
-            {
-                Console.WriteLine("Devi inserire la strada");
-            } if (city == "")
-            {
-                Console.WriteLine("Devi inserire la città");             
-            } if (province == "")
-            {
-                Console.WriteLine("Devi inserire la provincia");
-            }
         }
 
         public string GetName()

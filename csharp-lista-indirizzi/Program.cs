@@ -24,7 +24,7 @@ try
 
             if (splitInfo.Length != 6)
             {
-                Console.WriteLine("La riga " + rowCounter + " non rispetta i parametri previsit!");
+                Console.WriteLine("La riga " + rowCounter + " non rispetta i parametri previsti!");
             }
             else
             {
@@ -39,6 +39,7 @@ try
                 {
                     Console.WriteLine("C'è stato un errore alla riga numero " + rowCounter);
                     Console.WriteLine(ex.Message);
+
                 }
             }
         }
