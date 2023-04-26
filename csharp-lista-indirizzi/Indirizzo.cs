@@ -15,8 +15,7 @@ namespace csharp_lista_indirizzi
         public string city;
         public string province;
         public int ZIP;
-        List<Indirizzo> lista;
-        
+ 
         // COSTRUTTORE
 
         public Indirizzo(string name, string surname, string street, string city, string province, int ZIP)
@@ -27,7 +26,6 @@ namespace csharp_lista_indirizzi
             this.city = city;
             this.province = province;
             this.ZIP = ZIP;
-            this.lista = new List<Indirizzo>();
         }
 
         public string GetName()

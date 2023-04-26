@@ -3,6 +3,7 @@
 using csharp_lista_indirizzi;
 using static System.Net.Mime.MediaTypeNames;
 using System;
+using System.Linq.Expressions;
 
 List<Indirizzo> addressList = new List<Indirizzo>();
 
@@ -23,16 +24,36 @@ try
 
             if (splitInfo.Length != 6)
             {
-                Console.WriteLine("La riga " + rowCounter + "non rispetta i parametri previsit!");
+                Console.WriteLine("La riga " + rowCounter + " non rispetta i parametri previsit!");
             }
             else
             {
+                int civicNumber = int.Parse(splitInfo[5]);
 
+                try
+                {
+                    Indirizzo address = new Indirizzo(splitInfo[0], splitInfo[1], splitInfo[2], splitInfo[3], splitInfo[4], civicNumber);
+                    addressList.Add(address);
+                }
+                catch (ArgumentException ex)
+                {
+                    Console.WriteLine("C'è stato un errore alla riga numero " + rowCounter);
+                    Console.WriteLine(ex.Message);
+                }
             }
         }
+    } 
+    file.Close();
+}
+
+    catch (Exception e)
+    {
+        Console.WriteLine("Qualcosa è andato storto...");
+        Console.WriteLine(e.Message);
     }
 
-    
-
-        
+foreach (Indirizzo indirizzo in addressList)
+{
+    Console.WriteLine(indirizzo);
 }
+
