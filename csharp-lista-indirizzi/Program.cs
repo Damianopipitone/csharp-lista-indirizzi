@@ -39,6 +39,11 @@ try
                 {
                     Console.WriteLine("C'è stato un errore alla riga numero " + rowCounter);
                     Console.WriteLine(ex.Message);
+
+                    if (ex.ParamName == "")
+                    {
+                        Console.WriteLine("Manca il nome...");
+                    }
                 }
             }
         }

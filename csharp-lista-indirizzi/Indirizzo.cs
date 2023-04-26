@@ -26,6 +26,26 @@ namespace csharp_lista_indirizzi
             this.city = city;
             this.province = province;
             this.ZIP = ZIP;
+
+            if(name == "" || surname == "" || street == "" || city == "" || province == "")
+            {
+                Console.WriteLine("Mancano alcuni parametri");
+            } if (name == "")
+            {
+                Console.WriteLine("Devi inserire il nome");
+            } if (surname == "")
+            {
+                Console.WriteLine("Devi inserire il cognome");
+            } if(street == "")
+            {
+                Console.WriteLine("Devi inserire la strada");
+            } if (city == "")
+            {
+                Console.WriteLine("Devi inserire la città");             
+            } if (province == "")
+            {
+                Console.WriteLine("Devi inserire la provincia");
+            }
         }
 
         public string GetName()
